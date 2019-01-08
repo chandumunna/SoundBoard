@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "WillyRex SoundBoard",
+  "short_name": "WillyRex",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
