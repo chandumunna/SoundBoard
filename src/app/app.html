@@ -1,10 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Frases De WillyRex</ion-title>
+  </ion-navbar>
+</ion-header>
 <ion-content>
-        <ion-grid>
-          <ion-row>
-            <ion-col col-6 *ngFor="let item of data"  (click)="play(item.audio)">
-              <h1>{{item.title}}</h1>
-              <ion-icon name="play"></ion-icon>
-            </ion-col>
-          </ion-row>        
-        </ion-grid>      
+        <ion-list>
+          <ion-item *ngFor="let item of data">
+            <h2 (click)="play(item.audio)">{{ item.title }}</h2>
+            <ion-icon name="share" item-end (click)="share(item.audio)"></ion-icon>
+          </ion-item> 
+        </ion-list>
+
   </ion-content>

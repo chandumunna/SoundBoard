@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Platform } from "ionic-angular";
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @Component({
   templateUrl: 'app.html'
@@ -7,14 +9,19 @@ export class MyApp {
   data: any;
   webmedia: any;
 
-  constructor() {
+  constructor(platform: Platform,private socialSharing: SocialSharing) {
+
+		platform.registerBackButtonAction(() => {
+					platform.exitApp();
+	});
+
     this.data = [
       { title:'AAAHH', audio:'./assets/sounds/aaaaaaahh.mp3'},
-			{ title:'Aprobecha el Bug', audio:'./assets/sounds/Aprobechaelbug.mp3'},
+			{ title:'Aprovecha el Bug', audio:'./assets/sounds/Aprobechaelbug.mp3'},
 			{ title:'Aqui WillyRex Comentando', audio:'./assets/sounds/Aquiwillyrexcomentadno.mp3'},
-			{ title:'A ver, A ver...', audio:'./assets/sounds/averavertomasfalete.mp3'},
+			{ title:'A ver, a ver...', audio:'./assets/sounds/averavertomasfalete.mp3'},
 			{ title:'HALA HALA HALA', audio:'./assets/sounds/HALAHALAHALA.mp3'},
-			{ title:'Ha Petao la Magia', audio:'./assets/sounds/hapetadolamagia.mp3'},
+			{ title:'Ha petao la Magia', audio:'./assets/sounds/hapetadolamagia.mp3'},
 			{ title:'Madre Mia mis Cosas', audio:'./assets/sounds/MadremiaMisCosas.mp3'},
 			{ title:'Madre Mia Willy', audio:'./assets/sounds/MadreMiaWilly.mp3'},
 			{ title:'Maldito juego de Cubos', audio:'./assets/sounds/Malditojuegodecubostio.mp3'},
@@ -50,6 +57,10 @@ export class MyApp {
 			this.webmedia.load();
 			this.webmedia.play();
 
+  }
+
+  share(soundFile){
+	this.socialSharing.share("Escucha esta frase de Willy...",null,soundFile)
   }
 }
 
