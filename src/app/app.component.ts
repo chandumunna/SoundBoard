@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Platform } from "ionic-angular";
-import { SocialSharing } from '@ionic-native/social-sharing';
 
 @Component({
   templateUrl: 'app.html'
@@ -9,7 +8,7 @@ export class MyApp {
   data: any;
   webmedia: any;
 
-  constructor(platform: Platform,private socialSharing: SocialSharing) {
+  constructor(platform: Platform) {
 
 		platform.registerBackButtonAction(() => {
 					platform.exitApp();
@@ -59,9 +58,6 @@ export class MyApp {
 
   }
 
-  share(soundFile){
-	this.socialSharing.share("Escucha esta frase de Willy...",null,soundFile)
-  }
 }
 
 
