@@ -50,11 +50,11 @@ export class MyApp {
 			isTesting: false,
 			autoShow: true
 		   };
+
 		   admobFree.banner.config(addConfig);
+
 		   admobFree.banner.prepare()
-			 .then(() => {
-				admobFree.banner.show();
-			 })
+			 .then(() => {})
 			 .catch(e => console.log(e));
   }
 
