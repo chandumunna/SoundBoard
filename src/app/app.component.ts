@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from "ionic-angular";
+import { AdMobFree , AdMobFreeBannerConfig  } from '@ionic-native/admob-free';
 
 @Component({
   templateUrl: 'app.html'
@@ -8,7 +9,7 @@ export class MyApp {
   data: any;
   webmedia: any;
 
-  constructor(platform: Platform) {
+  constructor(platform: Platform, admobFree: AdMobFree) {
 
 		platform.registerBackButtonAction(() => {
 					platform.exitApp();
@@ -44,7 +45,17 @@ export class MyApp {
 			{ title:'Tiene que areglarse tio', audio:'./assets/sounds/tienequeareglarsetio.mp3'},
 			{ title:'Tioooo', audio:'./assets/sounds/Tioooo.mp3'},
 		];
-
+		const addConfig: AdMobFreeBannerConfig = {
+			id: 'ca-app-pub-8119907816555669/7510366737',
+			isTesting: false,
+			autoShow: true
+		   };
+		   admobFree.banner.config(addConfig);
+		   admobFree.banner.prepare()
+			 .then(() => {
+				admobFree.banner.show();
+			 })
+			 .catch(e => console.log(e));
   }
 
 
