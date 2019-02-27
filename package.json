@@ -1,5 +1,5 @@
 {
-  "name": "WillyRex",
+  "name": "Tito MC",
   "version": "1.1.4",
   "author": "Mattia La Spina",
   "homepage": "",
@@ -36,7 +36,7 @@
     "@ionic/app-scripts": "3.2.1",
     "typescript": "~2.6.2"
   },
-  "description": "WillyRex SoundBoard",
+  "description": "Frases Del Tito MC",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -48,7 +48,7 @@
         "ANDROID_SUPPORT_V4_VERSION": "24.1.1+"
       },
       "cordova-plugin-admob-free": {
-        "ADMOB_APP_ID": "ca-app-pub-8119907816555669~8329280923"
+        "ADMOB_APP_ID": "ca-app-pub-8119907816555669~9753520141"
       }
     },
     "platforms": [
